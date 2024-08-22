@@ -4,7 +4,7 @@
 
 ### Команды
 
-Запуск 1 скри:
+Запуск 1 сценария:
 
 ```bash
 pytest -s -v --tb=line -m scen1 tests.py 
