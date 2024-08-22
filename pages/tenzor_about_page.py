@@ -13,7 +13,6 @@ class TenzorAboutPage(BasePage):
 
     def should_be_height_and_weight_photos_in_work_block(self):
         assert self.is_elements_present(TenzorAboutPageLocators.PHOTOS), 'Фотографии не обнаружены!'
-        # photos = self.browser.find_elements(*TenzorAboutPageLocators.PHOTOS)
         photos = self.is_elements_present(TenzorAboutPageLocators.PHOTOS)
         assert len(photos)==4, "Фотографий ожидается в количестве 4 шт"
         first_height = photos[0].get_attribute("height")

@@ -1,17 +1,20 @@
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import os
 
 
 @pytest.fixture()
 def browser():
-    browser = webdriver.Chrome(ChromeDriverManager().install())
+    service = Service(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome(service=service)
     yield browser
     browser.quit()
 
 @pytest.fixture(scope='function')
 def browser_d():
+    service = Service(executable_path=ChromeDriverManager().install())
     current_directory = os.getcwd()
     options = webdriver.ChromeOptions()
     prefs = {
@@ -24,6 +27,6 @@ def browser_d():
     options.add_argument("--allow-running-insecure-content")
     options.add_argument("--ignore-certificate-errors")
     options.add_argument("--safebrowsing-disable-download-protection")
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome(options=options, service=service)
     yield browser
     browser.quit()

@@ -23,6 +23,7 @@ class TenzorPageLocators:
     POPUP = (By.CLASS_NAME, "tensor_ru-CookieAgreement")
     POPUP_ALL = (By.CLASS_NAME,"tensor_ru-CookieAgreement__message")
     OVERLAY = (By.CSS_SELECTOR, "div.preload-overlay[name='loadingOverlay']")
+    OVERLAY2 = (By.CSS_SELECTOR, ".sbis_ru-CookieAgreement__message")
 
 class TenzorAboutPageLocators:
     BLOCK_WORK = (By.CSS_SELECTOR, ".tensor_ru-About__block3 .tensor_ru-About__block-title")
