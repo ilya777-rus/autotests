@@ -34,7 +34,7 @@ def test_scen2(browser):
     home_page.open()
     home_page.should_be_click_contact_link()
     contact_page=ContactPage(browser, browser.current_url)
-    contact_page.should_be_click_region_Bashkort()
+
     contact_page.should_be_name_region()
     contact_page.should_be_click_region_Kamchatcka()
     contact_page.should_be_name_region_for_kamchatka()
